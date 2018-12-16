@@ -1,3 +1,14 @@
+<?php
+if (isset($_POST['SEND'])) {
+	$to = 'reed@intellegenex.com';
+	$subject = 'Contact from Portfolio Site';
+	$message = 'Name: ' . $_POST['name'] . "\r\n\r\n";
+	$message .= 'Email: ' . $_POST['email'] . "\r\n\r\n";
+	$message .= 'Subject: ' . $_POST['subject'] . "\r\n\r\n";
+	$message .= 'Message: ' . $_POST['message'];
+	$success = mail($to, $subject, $message, $headers);
+}
+?>
 <!doctype html>
 <html>
 <head>
